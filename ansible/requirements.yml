@@ -1,0 +1,7 @@
+roles:
+#  TODO: Figure out admin details
+#  - src: insight_stratum.btcpool
+  
+  - src: geerlingguy.certbot
+    version: 3.1.0
+  

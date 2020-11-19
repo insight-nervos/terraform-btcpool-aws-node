@@ -1,0 +1,5 @@
+{
+  "projects": {
+    "ansible/roles/btcpool": "https://github.com/insight-stratum/ansible-role-btcpool"
+  }
+}
