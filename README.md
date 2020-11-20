@@ -3,28 +3,63 @@
 [![open-issues](https://img.shields.io/github/issues-raw/insight-infrastructure/terraform-btcpool-aws-node?style=for-the-badge)](https://github.com/insight-infrastructure/terraform-btcpool-aws-node/issues)
 [![open-pr](https://img.shields.io/github/issues-pr-raw/insight-infrastructure/terraform-btcpool-aws-node?style=for-the-badge)](https://github.com/insight-infrastructure/terraform-btcpool-aws-node/pulls)
 
+> Note - WIP 
+> Finishing up for milestone 1 delivery for the [Nervos, btcpool Stratum V2 spec upgrade](https://talk.nervos.org/t/insight-automated-stratum-v2-mining-pool-for-nervos/4870).  
+> Only Nervos currently supported. More chains in the future. 
+
 ## Features
 
-This module sets up a btcpool mining pool on AWS. 
+This module sets up a stratum v1 btcpool mining pool on AWS for the Nervos Blockchain. It uses an 
+[Ansible role](https://github.com/insight-stratum/ansible-role-btcpool) 
+to configure a node with docker and run a [btcpool docker-compose](https://github.com/insight-stratum/btcpool-docker-compose) 
+setup. Decoupling of the components into managed services (ie MSK for Kafka) is possible with modification of the
+ docker-compose. 
+
+For Alibaba Cloud, check github organization. 
+
+#### Dependencies 
+
+- [ansible-role-btcpool](https://github.com/insight-stratum/ansible-role-btcpool)
+- [btcpool-docker-compose](https://github.com/insight-stratum/btcpool-docker-compose)
+- [btcpool](https://github.com/btccom/btcpool)
 
 ## Terraform Versions
 
-For Terraform v0.12.0+
+For Terraform v0.13.0+
 
 ## Usage
 
+Install terraform v0.13+, get AWS credentials, clone this directory and cd into it. 
+
+```shell script
+# Create ssh keys and take note of path 
+ssh-keygen -b 4096 
+cd examples/defaults 
+# You will then be prompted to supply the path to your ssh key. 
+terraform apply 
+```
+
+Actual terraform. 
+
 ```hcl
-module "this" {
+variable "private_key_path" {}
+variable "public_key_path" {}
+
+module "defaults" {
   source = "github.com/insight-infrastructure/terraform-btcpool-aws-node"
-  
+  private_key_path = var.private_key_path
+  public_key_path  = var.public_key_path
 }
 ```
+
 ## Examples
 
 - [defaults](https://github.com/insight-infrastructure/terraform-btcpool-aws-node/tree/master/examples/defaults)
 
 ## Known  Issues
-No issue is creating limit on this module.
+
+- [ ] Expose ansible file attrs to user 
+- [ ] Support ssl (Only if going to UI - spec is AEAD encryption)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Providers
