@@ -34,7 +34,12 @@ Install terraform v0.13+, get AWS credentials, clone this directory and cd into 
 ```shell script
 # Create ssh keys and take note of path 
 ssh-keygen -b 4096 
+
+# Initialize terraform
 cd examples/defaults 
+terraform init
+
+# Start terraform
 # You will then be prompted to supply the path to your ssh key. 
 terraform apply 
 ```
