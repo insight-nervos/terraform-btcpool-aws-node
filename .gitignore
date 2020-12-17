@@ -6,7 +6,7 @@
 *.tfplan
 .terragrunt-cache
 .terraform
-terraform.tfvars
+examples/defaults/terraform.tfvars
 
 test/fixtures/keys/*
 !test/fixtures/keys/.gitkeep

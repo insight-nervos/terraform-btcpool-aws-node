@@ -10,7 +10,7 @@ variable "monitoring" {
 variable "root_volume_size" {
   description = "Root volume size"
   type        = number
-  default     = 8
+  default     = 40
 }
 
 variable "root_volume_type" {
@@ -28,7 +28,7 @@ variable "root_iops" {
 variable "instance_type" {
   description = "Instance type"
   type        = string
-  default     = "t3.small"
+  default     = "t3.medium"
 }
 
 variable "key_name" {

@@ -15,23 +15,23 @@ variable "public_ports" {
   type        = list(number)
   default = [
     22,
-    1800,
-    8080,
-    8081,
-    8114,
-    8115,
-    2181,
+    1800, # Stratum Server
+    8114, # CKB RPC
+    8115, # CKB p2p
+    9021, # Kafka control center
+    9090, # Prometheus
+    3000, # Grafana
   ]
 }
 
 variable "private_ports" {
-  description = "List of publicly open ports"
+  description = "List of private ports"
   type        = list(number)
   default     = []
 }
 
 variable "private_port_cidrs" {
-  description = "List of CIDR blocks for private ports"
+  description = "List of CIDR blocks for private ports.  This can be for private networks or stable IPs."
   type        = list(string)
   default     = ["172.31.0.0/16"]
 }

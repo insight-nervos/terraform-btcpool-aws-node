@@ -14,3 +14,7 @@ module "defaults" {
   private_key_path = var.private_key_path
   public_key_path  = var.public_key_path
 }
+
+output "public_ip" {
+  value = module.defaults.public_ip
+}
