@@ -12,10 +12,10 @@ setup.
 For Alibaba Cloud, check github organization. 
 
 #### Dependencies 
-
+- Python
+- [Ansible](https://github.com/ansible/ansible) - `pip install ansible`
 - [ansible-role-btcpool](https://github.com/insight-stratum/ansible-role-btcpool)
 - [btcpool-docker-compose](https://github.com/insight-stratum/btcpool-docker-compose)
-- [btcpool](https://github.com/btccom/btcpool)
 
 ## Terraform Versions
 
