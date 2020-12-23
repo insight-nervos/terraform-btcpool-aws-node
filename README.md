@@ -28,8 +28,8 @@ For Terraform v0.13.0+
 ```shell script
 # Create ssh keys and take note of path 
 ssh-keygen -b 4096 
-# Modify the terraform.tfvars and remove comments ('//')
 nano terraform.tfvars 
+# Modify the terraform.tfvars and remove comments ('//')
 terraform init 
 terraform apply 
 ```
