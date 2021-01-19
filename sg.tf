@@ -47,7 +47,7 @@ resource "aws_security_group" "this" {
   vpc_id      = var.vpc_id == "" ? null : var.vpc_id
   name        = "${var.name}-sg"
   description = "Btcpool security group"
-  tags        = var.tags
+  tags        = merge({ Name = local.name_suffix }, var.tags)
 }
 
 resource "aws_security_group_rule" "public_ports" {

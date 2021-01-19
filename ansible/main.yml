@@ -7,5 +7,5 @@
       
   roles:
     - common
-#    - insight_stratum.btcpool
-    - btcpool
+    - insight_nervos.btcpool
+#    - btcpool
